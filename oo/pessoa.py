@@ -20,3 +20,7 @@ if __name__ == '__main__':
     #print(velton.filhos)
     for filho in velton.filhos:
         print(filho.nome)
+    velton.sobrenome = 'Moura'
+    del velton.filhos
+    print(velton.__dict__)
+    print(renzo.__dict__)
