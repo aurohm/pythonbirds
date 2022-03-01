@@ -10,6 +10,14 @@ class Pessoa:
     def cumprimentar(self):
         return f'Olá {id(self)}'
 
+    @staticmethod
+    def metodo_estatico(): # função atrelada a classe pessoa que não depende do objeto
+        return 42
+
+    @classmethod
+    def nome_e_atributos_de_classe(cls):
+        return f'{cls} - olhos {cls.olhos}'
+
 if __name__ == '__main__':
     renzo = Pessoa(nome='Renzo')
     velton = Pessoa(renzo, nome='Velton')
@@ -33,3 +41,5 @@ if __name__ == '__main__':
     print(velton.olhos)
     print(renzo.olhos)
     print(id(Pessoa.olhos), id(velton.olhos), id(renzo.olhos))
+    print(Pessoa.metodo_estatico(), velton.metodo_estatico())
+    print(Pessoa.nome_e_atributos_de_classe(), velton.nome_e_atributos_de_classe())
